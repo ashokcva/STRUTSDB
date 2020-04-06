@@ -33,7 +33,7 @@ password = obj.getPassword();
 
     try {
 Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3366/employee_db", "root", "");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_db", "root", "");
 Statement st = con.createStatement();
 if (name.length() != 0 && email.length() != 0 && password.length()!=0 ) {
 int m = st.executeUpdate("insert into register values('" + name + "','" + email +"','"+password+"')");

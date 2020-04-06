@@ -47,7 +47,7 @@ public class NewStrutsAction2 extends org.apache.struts.action.Action {
 
     try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3366/employee_db", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_db", "root", "");
             Statement st = con.createStatement();
             String s = "SELECT * FROM REGISTER WHERE EMAIL ='"+name+"' AND PASSWORD ='"+password+"'";
             
