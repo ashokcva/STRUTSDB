@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `employee_db`
+
 --
 
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `register`
 --
-
+-- Database: `employee_db`
 CREATE TABLE `register` (
   `name` varchar(25) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
