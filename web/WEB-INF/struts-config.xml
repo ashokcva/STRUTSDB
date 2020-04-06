@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+ 
+<struts-config>
+<!-- Form Bean important to write-->
+<form-beans>
+    <form-bean name="NewStrutsActionForm2" type="NewStrutsActionForm2"/>
+<form-bean name="NewStrutsActionForm" type="NewStrutsActionForm"/>
+</form-beans>
+ 
+<!--Action Mapping tag start here -->
+<action-mappings>
+<action input="/index.jsp" name="NewStrutsActionForm" path="/performAction" scope="session" type="NewStrutsAction">
+<!-- forward index.jsp page if "okay" message send from NewStrutsAction.class -->
+<forward name="okay" path="/index.jsp"/>
+<!-- forward error.jsp page if "wrong" message send from NewStrutsAction.class -->
+<forward name="wrong" path="/error.jsp"/>
+<forward name="login" path="/login.jsp"/>
+</action>
+<action input="/login.jsp" name="NewStrutsActionForm2" path="/performAction2" scope="session" type="NewStrutsAction2"> 
+<forward name="welcome" path="/welcome.jsp"/>
+<forward name="wrong" path="/error.jsp"/>
+</action>
+</action-mappings>
+<!-- -->
+ 
+<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+<message-resources parameter="com/myapp/struts/ApplicationResource"/>
+ 
+<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+<set-property property="moduleAware" value="true" />
+</plug-in>
+ 
+<!-- ========================= Validator plugin ================================= -->
+<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+<set-property
+property="pathnames"
+value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+</plug-in>
+ 
+</struts-config>
