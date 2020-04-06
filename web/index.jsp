@@ -6,7 +6,7 @@
 NAME:<input type="text" name="name"/><br/>
 EMAIL:<input type="text" name="email"/><br/>
 PASSWORD:<input type="password" name="password" /><br/>
-<input type="submit" name="signup" value="REGISTER"/><br>
+<input type="submit" name="signup" value="REGISTER "/><br>
 <h2>
     <% if(!(request.getAttribute("msg") == null)){
     out.println(request.getAttribute("msg")); }%>
